@@ -1,0 +1,300 @@
+/* Resetting and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #2C3E50, #3498DB);
+
+    overflow: hidden;
+    text-align: center; /* Center all text */
+}
+
+h1, h2, p {
+    font-weight: bold; /* Bold all text */
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    color: #FFFFFF; /* White to contrast with vivid backgrounds */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glow effect */
+    animation: glow 2s ease-in-out infinite alternate, fade-in-up 2s ease-in-out;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 10px;
+    color: #FFFFFF; /* White for better readability on darker sections */
+    animation: color-change 3s ease-in-out infinite;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    color: #FFFFFF; /* White for consistency */
+    animation: slide-in 2s ease-in-out;
+}
+
+/* Animation Effects */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 1);
+    }
+}
+
+@keyframes color-change {
+    0% {
+        color: #FFD700; /* Gold */
+    }
+    50% {
+        color: #FF8A00; /* Vibrant Orange */
+    }
+    100% {
+        color: #FF4E50; /* Deep Pink */
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-up {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoom-in {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-left {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Adding effects to other text classes */
+.intro-text {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    color: #FFFFFF; /* Consistent text color */
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+.final-message {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-top: 10px;
+    animation: fade-in-up 2s ease-in-out, pulse 2s ease-in-out infinite;
+    transform: matrix(6);
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: background-color 1s ease-in-out, opacity 1s ease-in-out;
+    text-align: center; /* Ensure text is centered in sections */
+}
+
+.slide {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.visible {
+    display: flex;
+    opacity: 1;
+    transform: scale(1);
+}
+
+img {
+    display: block;
+    max-width: 90%;
+    height: auto;
+    border-radius: 15px;
+    margin: 0 auto 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Specific Image Styles */
+.teaser-image {
+    max-width: 60%;
+    animation: zoom-in 1.5s ease-in-out;
+}
+
+.main-image {
+    max-width: 75%;
+    animation: fade-in-up 2s ease-in-out;
+}
+
+.extra-image {
+    max-width: 55%;
+    animation: fade-in-left 1.5s ease-in-out;
+}
+
+/* Background Images for each section */
+#welcome {
+    background: linear-gradient(135deg, #FF6F61, #FFD700); /* Bright Coral and Gold */
+    color: #FFFFFF; /* White text for contrast */
+}
+
+#teaser {
+    background: linear-gradient(135deg, #FF8A00, #FF4E50); /* Vibrant Orange to Deep Pink */
+    color: #FFFFFF; /* White text stands out */
+}
+
+#surprise-reveal {
+    background: linear-gradient(135deg, #6A0572, #FF6F91); /* Purple to Soft Pink */
+    color: #FFD700; /* Gold for contrast against purple */
+}
+
+#fun-fact {
+    background: linear-gradient(135deg, #17EAD9, #6078EA); /* Aqua to Blue */
+    color: #FFFFFF; /* White for better readability */
+}
+
+#birthday-message {
+    background: linear-gradient(135deg, #28B485, #99F2C8); /* Green to Light Mint */
+    color: #FFFFFF; /* White to contrast with green tones */
+}
+
+#final-message {
+    background: linear-gradient(135deg, #FF5F6D, #FFC371); /* Sunset Orange to Soft Gold */
+    color: #00f7ff; /* White for contrast */
+}
+
+/* Media Queries for Responsiveness */
+
+/* Mobile styles (default) */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .intro-text {
+        font-size: 1.2rem;
+    }
+
+    img {
+        max-width: 100%; /* Increased image size on mobile */
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 601px) and (max-width: 900px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+
+    .intro-text {
+        font-size: 1.4rem;
+    }
+
+    img {
+        max-width: 95%; /* Larger images on tablet */
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 901px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .intro-text {
+        font-size: 1.5rem;
+    }
+
+    img {
+        max-width: 90%; /* Increased desktop image size */
+    }
+}
